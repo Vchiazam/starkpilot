@@ -3,6 +3,7 @@
 An AI-powered contributor dashboard to supercharge open-source development on Starknet and OnlyDust.
 
 ## 🔍 Features
+
 - Personalized contributor dashboard
 - AI task recommendations based on GitHub activity
 - Integration with OnlyDust ecosystem
@@ -10,6 +11,7 @@ An AI-powered contributor dashboard to supercharge open-source development on St
 - Tracks contributions across repos
 
 ## 🧠 Tech Stack
+
 - React (Next.js)
 - Node.js / Supabase (TBD)
 - OpenAI / LLM
@@ -17,6 +19,7 @@ An AI-powered contributor dashboard to supercharge open-source development on St
 - OnlyDust integration
 
 ## 🛣 Roadmap
+
 - [ ] MVP UI with GitHub login
 - [ ] GitHub repo fetch + contribution history
 - [ ] OnlyDust project/task listing
@@ -24,8 +27,10 @@ An AI-powered contributor dashboard to supercharge open-source development on St
 - [ ] Public beta with live demo
 
 ## 👨‍💻 Contributors
+
 - Victor Chiazam (Founder)
 - Amina Ismalia (Frontend dev)
 
 ## 📄 License
+
 [MIT](./LICENSE)
