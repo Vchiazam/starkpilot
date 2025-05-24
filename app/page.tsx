@@ -1,26 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import {
-  ArrowRight,
-  Github,
-  Star,
-  Zap,
-  Users,
-  Code,
-  Trophy,
-} from "lucide-react";
+import TerminalAnimation from "@/components/terminal-animation";
+import HeroSection from "@/components/terminal-animation/text";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, Code, Github, Trophy, Users, Zap } from "lucide-react";
 import Link from "next/link";
-import TerminalAnimation from "@/components/terminal-animation";
-import React from "react";
-import Test from "@/components/terminal-animation/text";
-import HeroSection from "@/components/terminal-animation/text";
+import React, { useState } from "react";
 
 export default function LandingPage() {
   const [isHovered, setIsHovered] = useState(false);
-  const parentScrollRef = React.useRef(null);
+  const parentScrollRef = React.useRef<HTMLDivElement>(null);
 
   return (
     <div className="min-h-screen max-w-[2000px] mx-auto  bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-white ">

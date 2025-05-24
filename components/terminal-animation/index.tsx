@@ -40,8 +40,8 @@ const commands = [
     color: "text-purple-400",
   },
   {
-    text: "✓ Connected to GitHub (@johndev)",
-    delay: 30,
+    text: "✓ Connected to GitHub (@Vchiazam)",
+    delay: 40,
     color: "text-green-400",
   },
   {
@@ -125,7 +125,11 @@ const commands = [
   },
 ];
 
-export default function TerminalAnimation({ scrollContainerRef }: any) {
+export default function TerminalAnimation({
+  scrollContainerRef,
+}: {
+  scrollContainerRef: React.RefObject<HTMLDivElement | null>;
+}) {
   const [currentLine, setCurrentLine] = React.useState(0);
   const [currentChar, setCurrentChar] = React.useState(0);
   const [showCursor, setShowCursor] = React.useState(true);

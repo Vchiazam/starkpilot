@@ -1,25 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import {
-  Bell,
-  Plus,
-  Search,
-  Filter,
-  GitPullRequest,
-  Star,
-  Clock,
-  Users,
-  Code,
-  Trophy,
-  ExternalLink,
-  Github,
-} from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Sidebar,
   SidebarContent,
@@ -30,7 +15,22 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import {
+  Bell,
+  Clock,
+  Code,
+  ExternalLink,
+  Filter,
+  Github,
+  GitPullRequest,
+  Plus,
+  Search,
+  Star,
+  Trophy,
+  Users,
+} from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 function AppSidebar() {
   const menuItems = [
@@ -75,7 +75,7 @@ function AppSidebar() {
 }
 
 export default function Dashboard() {
-  const [showAddProject, setShowAddProject] = useState(false);
+  const [_showAddProject, setShowAddProject] = useState(false);
 
   const stats = [
     {
@@ -175,7 +175,7 @@ export default function Dashboard() {
                 Welcome back, John! 👋
               </h1>
               <p className="text-gray-400">
-                Here's what's happening in your StarkNet journey
+                Here&apos;s what&apos;s happening in your StarkNet journey
               </p>
             </div>
 
@@ -345,6 +345,7 @@ export default function Dashboard() {
           </main>
         </div>
       </div>
+      {_showAddProject && <>.</>}
     </SidebarProvider>
   );
 }

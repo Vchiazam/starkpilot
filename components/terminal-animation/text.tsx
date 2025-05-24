@@ -1,6 +1,6 @@
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Star } from "lucide-react";
+import React from "react";
 
 const wordSets = [
   ["Contribute", "Track", "Get Noticed"],
@@ -69,7 +69,7 @@ export default function HeroSection() {
 
       <motion.h1 className="text-6xl lg:text-7xl font-bold leading-tight flex flex-wrap gap-x-4 min-h-[90px]">
         <AnimatePresence mode="wait">
-          {wordSets[setIndex].map((word, i) => (
+          {wordSets[setIndex].map((word) => (
             <motion.span
               key={word}
               variants={wordVariant}
