@@ -21,7 +21,7 @@ interface ChatWidgetProps {
   brandColor?: string;
 }
 
-export default function ChatWidget({
+function ChatWidget({
   messages = [
     {
       id: "1",
@@ -239,4 +239,7 @@ export default function ChatWidget({
       )}
     </div>
   );
+}
+export default function Page() {
+  return <ChatWidget />;
 }
