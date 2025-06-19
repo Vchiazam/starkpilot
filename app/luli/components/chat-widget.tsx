@@ -53,11 +53,42 @@ export function ChatWidget({
   const [isMinimized, setIsMinimized] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+  useEffect(() => {
+    const updateParentSize = () => {
+      if (window.parent !== window) {
+        const size = {
+          width: isOpen ? 380 : 80,
+          height: isOpen ? (isMinimized ? 80 : 520) : 80,
+          isOpen,
+          isMinimized,
+        };
+        window.parent.postMessage({ type: "CHAT_WIDGET_RESIZE", size }, "*");
+      }
+    };
 
+    updateParentSize();
+  }, [isOpen, isMinimized]);
+
+  // Dark mode detection
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const isDark =
+        window.matchMedia("(prefers-color-scheme: dark)").matches ||
+        document.documentElement.classList.contains("dark");
+      setIsDarkMode(isDark);
+    };
+
+    checkDarkMode();
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    mediaQuery.addEventListener("change", checkDarkMode);
+
+    return () => mediaQuery.removeEventListener("change", checkDarkMode);
+  }, []);
   useEffect(() => {
     if (isOpen && !isMinimized) {
       scrollToBottom();
