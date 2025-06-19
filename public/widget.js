@@ -3,7 +3,7 @@
   const clientId = scriptTag.getAttribute("data-client-id") || "unknown";
 
   const iframe = document.createElement("iframe");
-  iframe.src = `https://https://starkpilot.vercel.app/luli?clientId=${clientId}`;
+  iframe.src = `https://starkpilot.vercel.app/luli?clientId=${clientId}`;
   iframe.style.position = "fixed";
   iframe.style.bottom = "20px";
   iframe.style.right = "20px";
