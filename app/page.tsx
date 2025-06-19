@@ -32,7 +32,7 @@ export default function LandingPage() {
           </span>
         </div>
         <div className="flex items-center space-x-4">
-          <span className="text-sm text-gray-400">Powered by OnlyDust</span>
+          {/* <span className="text-sm text-gray-400">Powered by OnlyDust</span> */}
           <Button
             variant="outline"
             className="border-purple-500/50 text-purple-300 hover:bg-purple-500/20"
